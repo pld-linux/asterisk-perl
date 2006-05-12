@@ -1,3 +1,7 @@
+#
+# TODO:
+# - License, name perl-asterisk?
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	Asterisk PBX Perl Modules
 Summary(pl):	Modu³y Perl-a do Asterisk PBX.
@@ -5,11 +9,10 @@ Name:		asterisk-perl
 Version:	0.08
 Release:	0.1
 License:	- (enter GPL/GPL v2/LGPL/BSD/BSD-like/other license name here)
-Group:		Applications
+Group:		Development/Languages/Perl
 Source0:	http://asterisk.gnuinter.net/files/%{name}-%{version}.tar.gz
 # Source0-md5:	73a47caaff8cafbf78053692f408ceb6
 URL:		http://asterisk.gnuinter.net/
-BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,8 +29,8 @@ asterisk-perl jest zbiorem modu³ów perl-a u¿ywanych z Asterisk PBX.
 
 %build
 %{__perl} Makefile.PL \
-		INSTALLDIRS=vendor
-%{__make} 
+	INSTALLDIRS=vendor
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -35,11 +38,14 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/%{name}/.packlist
 
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/auto/asterisk-perl/.packlist
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
-%{perl_vendorlib}/*
 %{_mandir}/man3/*
+%{perl_vendorlib}/Asterisk
+%{perl_vendorlib}/Asterisk.pm
