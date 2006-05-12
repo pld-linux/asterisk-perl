@@ -1,4 +1,3 @@
-#TODO - prefix in build section and files
 %include	/usr/lib/rpm/macros.perl
 Summary:	Asterisk PBX Perl Modules
 Summary(pl):	Modu³y Perl-a do Asterisk PBX.
@@ -26,14 +25,15 @@ asterisk-perl jest zbiorem modu³ów perl-a u¿ywanych z Asterisk PBX.
 %setup -q
 
 %build
-%{__perl} Makefile.PL 
-%{__make}
+%{__perl} Makefile.PL \
+		INSTALLDIRS=vendor
+%{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/%{name}/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -41,7 +41,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
-#??????%%{_libdir}/perl5/5.8.0/%{arch}-pld-linux-thread-multi/auto/asterisk-perl/.packlist
-#%{_datadir}/perl5/Asterisk*
-#%{_datadir}/perl5/Asterisk/*
-#%{_mandir}/man3/Asterisk*
+%{perl_vendorlib}/*
+%{_mandir}/man3/*
