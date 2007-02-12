@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Asterisk PBX Perl Modules
-Summary(pl):	Modu≥y Perla do centralki (PBX-a) Asterisk
+Summary(pl.UTF-8):   Modu≈Çy Perla do centralki (PBX-a) Asterisk
 Name:		asterisk-perl
 Version:	0.08
 Release:	0.1
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 asterisk-perl is a collection of Perl modules to be used with the
 Asterisk PBX.
 
-%description -l pl
-asterisk-perl jest zbiorem modu≥Ûw Perla uøywanych z pakietem Asterisk
+%description -l pl.UTF-8
+asterisk-perl jest zbiorem modu≈Ç√≥w Perla u≈ºywanych z pakietem Asterisk
 PBX.
 
 %prep
