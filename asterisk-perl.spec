@@ -6,12 +6,12 @@
 Summary:	Asterisk PBX Perl Modules
 Summary(pl.UTF-8):	Moduły Perla do centralki (PBX-a) Asterisk
 Name:		asterisk-perl
-Version:	0.08
+Version:	0.10
 Release:	0.1
 License:	- (enter GPL/GPL v2/LGPL/BSD/BSD-like/other license name here)
 Group:		Development/Languages/Perl
 Source0:	http://asterisk.gnuinter.net/files/%{name}-%{version}.tar.gz
-# Source0-md5:	73a47caaff8cafbf78053692f408ceb6
+# Source0-md5:	27fd83d417c556e83cfe7f5dcb40aba0
 URL:		http://asterisk.gnuinter.net/
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
