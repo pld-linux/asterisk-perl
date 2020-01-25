@@ -2,7 +2,6 @@
 # TODO:
 # - License, name perl-Asterisk?
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	Asterisk PBX Perl Modules
 Summary(pl.UTF-8):	Moduły Perla do centralki (PBX-a) Asterisk
 Name:		asterisk-perl
